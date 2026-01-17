@@ -1,0 +1,86 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "images"
+public_folder: "/images"
+
+locale: "fr"
+
+collections:
+  - name: "collections"
+    label: "Collections"
+    files:
+      - name: "meteore"
+        label: "Collection Meteore"
+        file: "content/meteore.json"
+        fields:
+          - name: "images"
+            label: "Photos"
+            widget: "list"
+            field:
+              name: "image"
+              label: "Photo"
+              widget: "image"
+
+      - name: "reminescence"
+        label: "Collection Reminescence"
+        file: "content/reminescence.json"
+        fields:
+          - name: "images"
+            label: "Photos"
+            widget: "list"
+            field:
+              name: "image"
+              label: "Photo"
+              widget: "image"
+
+      - name: "collab"
+        label: "Collaborations"
+        file: "content/collab.json"
+        fields:
+          - name: "images"
+            label: "Photos"
+            widget: "list"
+            field:
+              name: "image"
+              label: "Photo"
+              widget: "image"
+
+      - name: "placidite"
+        label: "Collection Placidite"
+        file: "content/placidite.json"
+        fields:
+          - name: "images"
+            label: "Photos"
+            widget: "list"
+            field:
+              name: "image"
+              label: "Photo"
+              widget: "image"
+
+      - name: "contraste"
+        label: "Contraste & Mouvement"
+        file: "content/contraste.json"
+        fields:
+          - name: "images"
+            label: "Photos"
+            widget: "list"
+            field:
+              name: "image"
+              label: "Photo"
+              widget: "image"
+
+      - name: "homepage"
+        label: "Photos Accueil"
+        file: "content/homepage.json"
+        fields:
+          - name: "images"
+            label: "Photos"
+            widget: "list"
+            field:
+              name: "image"
+              label: "Photo"
+              widget: "image"
