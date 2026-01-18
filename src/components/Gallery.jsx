@@ -1,0 +1,87 @@
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+export default function Gallery({ jsonPath, withLinks = false }) {
+  const [images, setImages] = useState([]);
+
+  useEffect(() => {
+    fetch(jsonPath)
+      .then((res) => res.json())
+      .then((data) => {
+        setImages(data.images || []);
+      })
+      .catch((err) => console.log('Erreur chargement images:', err));
+  }, [jsonPath]);
+
+  useEffect(() => {
+    if (images.length > 0 && typeof window.jQuery !== 'undefined') {
+      const $ = window.jQuery;
+
+      // Reinitialiser la galerie justified
+      setTimeout(() => {
+        if ($.fn.justifiedGallery) {
+          $('#gallery-container').justifiedGallery({
+            rowHeight: 400,
+            maxRowHeight: false,
+            captions: false,
+            margins: 10,
+            waitThumbnailsLoad: true,
+          });
+        }
+
+        // Reinitialiser le lightbox pour navigation entre photos
+        if ($.fn.magnificPopup && !withLinks) {
+          $('.lightbox-portfolio').magnificPopup({
+            delegate: 'a[data-group="lightbox-gallery"]',
+            type: 'image',
+            gallery: {
+              enabled: true,
+              navigateByImgClick: true,
+              preload: [0, 1],
+            },
+            image: {
+              cursor: 'mfp-zoom-out-cur',
+            },
+            mainClass: 'mfp-with-zoom',
+          });
+        }
+      }, 100);
+    }
+  }, [images, withLinks]);
+
+  return (
+    <section className="wow animate__fadeIn p-0">
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-12 lightbox-portfolio p-0">
+            <div id="gallery-container" className="justified-gallery">
+              {images.map((item, index) => {
+                const imgSrc = item.image || item;
+                const link = item.link || '#';
+                const delay = index % 3 === 1 ? '0.2s' : index % 3 === 2 ? '0.4s' : undefined;
+
+                return (
+                  <div
+                    key={index}
+                    className="wow animate__fadeInUp"
+                    data-wow-delay={delay}
+                  >
+                    {withLinks && link !== '#' ? (
+                      <Link to={link}>
+                        <img src={imgSrc} alt="Dawn Martins" />
+                      </Link>
+                    ) : (
+                      <a href={imgSrc} data-group="lightbox-gallery">
+                        <img src={imgSrc} alt="Dawn Martins" />
+                      </a>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
