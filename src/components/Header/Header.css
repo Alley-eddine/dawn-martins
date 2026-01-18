@@ -25,8 +25,21 @@
 
 /* Logo */
 .header-logo img {
-  width: 100px;
+  width: 180px;
   height: auto;
+  transition: width 0.3s ease;
+}
+
+@media (max-width: 991px) {
+  .header-logo img {
+    width: 150px;
+  }
+}
+
+@media (max-width: 576px) {
+  .header-logo img {
+    width: 120px;
+  }
 }
 
 /* Hamburger Button */

@@ -91,7 +91,7 @@ export default function Header({ isCollectionPage = false }) {
               <i className="fa-brands fa-instagram"></i>
             </a>
             <div className="menu-copyright">
-              © 2025 Dawn Martins
+              © 2026 Dawn Martins
             </div>
           </div>
         </div>

@@ -10,18 +10,16 @@ export default function Footer() {
             <div className="col-md-3 text-center text-lg-start sm-margin-20px-bottom">
               <Link to="/">
                 <img
-                  className="footer-logo"
-                  src="/images/DAWNblack.svg"
-                  data-at2x="/images/DAWNblack.svg"
-                  alt="Dawn"
-                  style={{ width: '100px', height: 'auto' }}
+                  src="/images/logo.svg"
+                  alt="Dawn Martins"
+                  style={{ width: '180px', maxWidth: '100%', height: 'auto' }}
                 />
               </Link>
             </div>
 
             {/* Copyright */}
             <div className="col-md-6 text-center text-small alt-font sm-margin-10px-bottom">
-              &copy; 2025 Dawn Martins. Site par{' '}
+              &copy; 2026 Dawn Martins. Site par{' '}
               <a href="https://alleycom.fr" target="_blank" rel="noreferrer" title="Alleycom">
                 Alleycom
               </a>
