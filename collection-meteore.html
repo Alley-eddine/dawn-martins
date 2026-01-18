@@ -14,8 +14,9 @@
     <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
   </head>
-  <body class="w-100">
+  <body class="w-100 collection-page">
     <!-- start header -->
     <header class="no-sticky">
       <nav class="navbar full-width-pull-menu navbar-top-scroll no-border-top nav-box-width no-transition">
@@ -58,7 +59,6 @@
                             </ul>
                           </li>
                           <li class="dropdown"><a href="about.html">A propos</a></li>
-                          <li class="dropdown"><a href="contact.html">Contact</a></li>
                         </ul>
                         <div class="margin-fifteen-top">
                           <div class="icon-social-medium padding-three-bottom">
@@ -75,7 +75,9 @@
               </div>
             </div>
             <button class="navbar-toggler mobile-toggle" type="button" id="open-button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
-              <span></span><span></span><span></span>
+              <span></span>
+              <span></span>
+              <span></span>
             </button>
           </div>
         </div>
@@ -83,22 +85,7 @@
     </header>
     <!-- end header -->
 
-    <!-- start page title -->
-    <section class="wow animate__fadeIn bg-extra-dark-gray padding-50px-tb page-title-small">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-8 col-md-6 text-center text-md-start">
-            <h1 class="alt-font text-white font-weight-600 mb-0">Collection Meteore</h1>
-          </div>
-          <div class="col-xl-4 col-md-6 text-center text-md-end">
-            <span class="d-inline-block text-small text-white-2">
-              <a href="index.html" class="text-white-2">Accueil</a> &nbsp;/&nbsp; Meteore
-            </span>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- end page title -->
+   
 
     <!-- start gallery section -->
     <section class="wow animate__fadeIn p-0">
@@ -106,7 +93,6 @@
         <div class="row">
           <div class="col-12 lightbox-portfolio p-0">
             <div id="gallery-container" class="justified-gallery" data-justified-options='{ "rowHeight": 400, "maxRowHeight": false, "captions": true, "margins": 10, "waitThumbnailsLoad": true }'>
-              <!-- Images chargees dynamiquement -->
             </div>
           </div>
         </div>
@@ -120,11 +106,11 @@
         <div class="row align-items-center">
           <div class="col-md-3 text-center text-lg-start sm-margin-20px-bottom">
             <a href="index.html">
-              <img class="footer-logo" src="images/DAWNblack.svg" data-at2x="images/DAWNblack.svg" alt="Dawn" style="width: 100px; height: auto" />
+              <img class="footer-logo" src="images/DAWNblack.svg" alt="Dawn" style="width: 100px; height: auto" />
             </a>
           </div>
           <div class="col-md-6 text-center text-small alt-font sm-margin-10px-bottom">
-            &copy; 2025 Dawn Martins. Site par <a href="https://alleycom.fr" target="_blank" title="Alleycom">Alleycom</a>.
+            &copy; 2025 Dawn Martins. Site par <a href="https://alleycom.fr" target="_blank">Alleycom</a>.
           </div>
           <div class="col-md-3 text-center text-lg-end">
             <div class="social-icon-style-8 d-inline-block align-middle">
@@ -161,7 +147,7 @@
                 if (index % 3 === 2) div.setAttribute('data-wow-delay', '0.4s');
                 const a = document.createElement('a');
                 a.href = item.image || item;
-                a.className = 'gallery-link';
+                a.setAttribute('data-group', 'lightbox-gallery');
                 const img = document.createElement('img');
                 img.src = item.image || item;
                 img.alt = 'Dawn Martins - Meteore';

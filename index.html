@@ -107,9 +107,6 @@
                           <li class="dropdown">
                             <a href="about.html">A propos</a>
                           </li>
-                          <li class="dropdown">
-                            <a href="contact.html">Contact</a>
-                          </li>
                         </ul>
                         <!-- end menu -->
                         <!-- start social links -->
@@ -385,11 +382,15 @@
                 if (index % 3 === 1) div.setAttribute('data-wow-delay', '0.2s');
                 if (index % 3 === 2) div.setAttribute('data-wow-delay', '0.4s');
 
+                const a = document.createElement('a');
+                a.href = item.link || '#';
+
                 const img = document.createElement('img');
                 img.src = item.image || item;
                 img.alt = 'Dawn Martins';
 
-                div.appendChild(img);
+                a.appendChild(img);
+                div.appendChild(a);
                 container.appendChild(div);
               });
 

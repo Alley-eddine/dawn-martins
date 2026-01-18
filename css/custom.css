@@ -1,0 +1,24 @@
+/* Custom CSS for Dawn Martins site */
+
+/* Header for collection pages - solid background, not overlapping content */
+.collection-page header.no-sticky {
+  position: relative !important;
+  background: #fff !important;
+}
+
+.collection-page header.no-sticky nav.navbar,
+.collection-page header.no-sticky nav.navbar-top-scroll,
+.collection-page nav.navbar.full-width-pull-menu {
+  position: relative !important;
+  background: #fff !important;
+  border-bottom: 1px solid #eee;
+}
+
+.collection-page .nav-header-container {
+  background: #fff !important;
+}
+
+/* Gallery section padding for collection pages */
+.collection-page section {
+  padding-top: 0 !important;
+}

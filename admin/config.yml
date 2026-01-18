@@ -80,7 +80,16 @@ collections:
           - name: "images"
             label: "Photos"
             widget: "list"
-            field:
-              name: "image"
-              label: "Photo"
-              widget: "image"
+            fields:
+              - name: "image"
+                label: "Photo"
+                widget: "image"
+              - name: "link"
+                label: "Lien vers collection"
+                widget: "select"
+                options:
+                  - { label: "Meteore", value: "collection-meteore.html" }
+                  - { label: "Reminescence", value: "collection-reminescence.html" }
+                  - { label: "Placidite", value: "collection-placidite.html" }
+                  - { label: "Contraste & Mouvement", value: "collection-contraste.html" }
+                  - { label: "Collaborations", value: "collection-collab.html" }

@@ -14,8 +14,10 @@
     <link rel="stylesheet" type="text/css" href="css/theme-vendors.min.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/responsive.css" />
+    <link rel="stylesheet" type="text/css" href="css/custom.css" />
   </head>
-  <body class="w-100">
+  <body class="w-100 collection-page">
+    <!-- start header -->
     <header class="no-sticky">
       <nav class="navbar full-width-pull-menu navbar-top-scroll no-border-top nav-box-width no-transition">
         <div class="container-fluid nav-header-container h-100px sm-h-70px">
@@ -29,9 +31,14 @@
               <div class="row g-0 h-100 justify-content-center">
                 <div class="col-md-6 p-0 text-center z-index-0 d-none d-md-flex flex-column justify-content-center cover-background">
                   <div class="z-index-minus1 opacity-medium bg-extra-dark-gray"></div>
-                  <a href="index.html"><img alt="Dawn Martins" src="images/DAWNblack.svg" style="width: 200px; height: auto" /></a>
+                  <a href="index.html">
+                    <img alt="Dawn Martins" src="images/DAWNblack.svg" data-at2x="images/DAWNblack.svg" style="width: 200px; height: auto" />
+                  </a>
                   <div class="position-absolute bottom-50 text-center w-100 margin-30px-bottom">
-                    <div class="text-small text-extra-medium-gray">&copy; 2025 Dawn Martins. <a href="https://alleycom.fr" class="text-extra-medium-gray" target="_blank">Alleycom</a></div>
+                    <div class="text-small text-extra-medium-gray">
+                      &copy; 2025 Dawn Martins. All Rights Reserved.
+                      <a href="https://alleycom.fr" title="Alleycom" class="text-extra-medium-gray text-deep-pink-hover" target="_blank">Alleycom</a>
+                    </div>
                   </div>
                 </div>
                 <div class="col-md-6 px-0 bg-white full-screen d-flex flex-column justify-content-center xs-padding-45px-tb">
@@ -52,11 +59,12 @@
                             </ul>
                           </li>
                           <li class="dropdown"><a href="about.html">A propos</a></li>
-                          <li class="dropdown"><a href="contact.html">Contact</a></li>
                         </ul>
                         <div class="margin-fifteen-top">
                           <div class="icon-social-medium padding-three-bottom">
-                            <a href="https://instagram.com/dawnmartinsparis/" target="_blank" class="text-extra-dark-gray text-deep-pink-hover margin-one-lr"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="https://instagram.com/dawnmartinsparis/" target="_blank" class="text-extra-dark-gray text-deep-pink-hover margin-one-lr">
+                              <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                            </a>
                           </div>
                         </div>
                       </div>
@@ -66,50 +74,54 @@
                 </div>
               </div>
             </div>
-            <button class="navbar-toggler mobile-toggle" type="button" id="open-button"><span></span><span></span><span></span></button>
+            <button class="navbar-toggler mobile-toggle" type="button" id="open-button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </div>
       </nav>
     </header>
+    <!-- end header -->
 
-    <section class="wow animate__fadeIn bg-extra-dark-gray padding-50px-tb page-title-small">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-xl-8 col-md-6 text-center text-md-start">
-            <h1 class="alt-font text-white font-weight-600 mb-0">Collection Placidite</h1>
-          </div>
-          <div class="col-xl-4 col-md-6 text-center text-md-end">
-            <span class="d-inline-block text-small text-white-2"><a href="index.html" class="text-white-2">Accueil</a> &nbsp;/&nbsp; Placidite</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
+    <!-- start gallery section -->
     <section class="wow animate__fadeIn p-0">
       <div class="container-fluid">
         <div class="row">
           <div class="col-12 lightbox-portfolio p-0">
-            <div id="gallery-container" class="justified-gallery" data-justified-options='{ "rowHeight": 400, "maxRowHeight": false, "captions": true, "margins": 10, "waitThumbnailsLoad": true }'></div>
+            <div id="gallery-container" class="justified-gallery" data-justified-options='{ "rowHeight": 400, "maxRowHeight": false, "captions": true, "margins": 10, "waitThumbnailsLoad": true }'>
+            </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- end gallery section -->
 
+    <!-- start footer -->
     <footer class="footer-strip border-color-extra-light-gray border-top padding-50px-tb sm-padding-30px-tb">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-md-3 text-center text-lg-start sm-margin-20px-bottom">
-            <a href="index.html"><img class="footer-logo" src="images/DAWNblack.svg" alt="Dawn" style="width: 100px; height: auto" /></a>
+            <a href="index.html">
+              <img class="footer-logo" src="images/DAWNblack.svg" alt="Dawn" style="width: 100px; height: auto" />
+            </a>
           </div>
-          <div class="col-md-6 text-center text-small alt-font sm-margin-10px-bottom">&copy; 2025 Dawn Martins. Site par <a href="https://alleycom.fr" target="_blank">Alleycom</a>.</div>
+          <div class="col-md-6 text-center text-small alt-font sm-margin-10px-bottom">
+            &copy; 2025 Dawn Martins. Site par <a href="https://alleycom.fr" target="_blank">Alleycom</a>.
+          </div>
           <div class="col-md-3 text-center text-lg-end">
             <div class="social-icon-style-8 d-inline-block align-middle">
-              <ul class="small-icon mb-0"><li><a class="instagram" href="https://instagram.com/dawnmartinsparis/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li></ul>
+              <ul class="small-icon mb-0">
+                <li><a class="instagram" href="https://instagram.com/dawnmartinsparis/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </footer>
+    <!-- end footer -->
 
     <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
 
@@ -134,7 +146,7 @@
                 if (index % 3 === 2) div.setAttribute('data-wow-delay', '0.4s');
                 const a = document.createElement('a');
                 a.href = item.image || item;
-                a.className = 'gallery-link';
+                a.setAttribute('data-group', 'lightbox-gallery');
                 const img = document.createElement('img');
                 img.src = item.image || item;
                 img.alt = 'Dawn Martins - Placidite';
