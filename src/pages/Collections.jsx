@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -53,6 +54,11 @@ export default function Collections() {
 
   return (
     <div className="w-100">
+      <Helmet>
+        <title>Collections - Dawn Martins</title>
+        <meta name="description" content="Explorez les collections de Dawn Martins: Meteore, Reminescence, Placidite, Contraste & Mouvement et collaborations." />
+      </Helmet>
+
       <Header />
 
       {/* Title section */}
@@ -104,7 +110,10 @@ export default function Collections() {
                 className={`collection-card ${index % 3 === 0 ? 'tall' : ''}`}
               >
                 <div className="collection-image">
-                  <img src={collection.image} alt={collection.title} />
+                  <picture>
+                    <source srcSet={collection.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                    <img src={collection.image} alt={collection.title} loading="lazy" />
+                  </picture>
                 </div>
                 <div className="collection-overlay">
                   <div className="collection-info">

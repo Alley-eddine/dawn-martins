@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import useInitScripts from '../hooks/useInitScripts';
@@ -7,6 +8,11 @@ export default function About() {
 
   return (
     <div className="w-100">
+      <Helmet>
+        <title>A propos - Dawn Martins</title>
+        <meta name="description" content="Decouvrez Dawn Martins, jeune styliste parisienne etudiante en Bachelor Fashion Design a Lisaa Mode Paris. Contact et parcours." />
+      </Helmet>
+
       <Header />
 
       {/* About section */}
@@ -14,7 +20,10 @@ export default function About() {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-5 col-md-6 text-center md-margin-50px-bottom wow animate__fadeInLeft">
-              <img src="/images/reportage_meteore/HOME1.JPG" alt="Dawn Martins" className="w-100" />
+              <picture>
+                <source srcSet="/images/reportage_meteore/HOME1.webp" type="image/webp" />
+                <img src="/images/reportage_meteore/HOME1.JPG" alt="Dawn Martins" className="w-100" loading="lazy" />
+              </picture>
             </div>
             <div className="col-lg-6 offset-lg-1 col-md-6 wow animate__fadeInRight">
               <h5 className="alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -8,22 +9,27 @@ const collectionsData = {
   meteore: {
     title: 'Meteore',
     jsonPath: '/content/meteore.json',
+    description: 'Collection Meteore par Dawn Martins - Un projet ambitieux presente lors de son propre defile de mode.',
   },
   reminescence: {
     title: 'Reminescence',
     jsonPath: '/content/reminescence.json',
+    description: 'Collection Reminescence par Dawn Martins - Une exploration des souvenirs a travers la mode.',
   },
   placidite: {
     title: 'Placidite',
     jsonPath: '/content/placidite.json',
+    description: 'Collection Placidite par Dawn Martins - La serenite exprimee a travers le design textile.',
   },
   contraste: {
     title: 'Contraste & Mouvement',
     jsonPath: '/content/contraste.json',
+    description: 'Collection Contraste & Mouvement par Dawn Martins - Jeux de textures et dynamisme.',
   },
   collab: {
     title: 'Collaborations',
     jsonPath: '/content/collab.json',
+    description: 'Collaborations de Dawn Martins - Projets realises avec d\'autres createurs et marques.',
   },
 };
 
@@ -48,6 +54,11 @@ export default function Collection() {
 
   return (
     <div className="w-100 collection-page">
+      <Helmet>
+        <title>{collection.title} - Dawn Martins</title>
+        <meta name="description" content={collection.description} />
+      </Helmet>
+
       <Header isCollectionPage={true} />
 
       {/* Title section */}

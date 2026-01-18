@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Gallery from '../components/Gallery';
@@ -8,13 +9,18 @@ export default function Home() {
 
   return (
     <div className="w-100">
+      <Helmet>
+        <title>Dawn Martins - Styliste et Designer de Mode</title>
+        <meta name="description" content="Dawn Martins, jeune styliste parisienne. Decouvrez mes collections de mode: Meteore, Reminescence, Placidite et collaborations." />
+      </Helmet>
+
       <Header />
 
       {/* Hero section */}
       <section
         className="wow animate__fadeIn p-0 position-relative parallax sm-background-image-center"
         data-parallax-background-ratio="0.5"
-        style={{ backgroundImage: "url('/images/reportage_meteore/homebanniere.JPG')" }}
+        style={{ backgroundImage: "url('/images/reportage_meteore/homebanniere.webp'), url('/images/reportage_meteore/homebanniere.JPG')" }}
       >
         <div className="container position-relative one-fourth-screen">
           <div className="row h-100 align-items-center">
