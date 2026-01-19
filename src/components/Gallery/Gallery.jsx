@@ -70,14 +70,14 @@ export default function Gallery({ jsonPath, withLinks = false }) {
                       <Link to={link}>
                         <picture>
                           <source srcSet={imgSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                          <img src={imgSrc} alt="Dawn Martins" loading="lazy" />
+                          <img src={imgSrc} alt="Dawn Martins" />
                         </picture>
                       </Link>
                     ) : (
                       <a href={imgSrc} data-group="lightbox-gallery">
                         <picture>
                           <source srcSet={imgSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                          <img src={imgSrc} alt="Dawn Martins" loading="lazy" />
+                          <img src={imgSrc} alt="Dawn Martins" />
                         </picture>
                       </a>
                     )}
