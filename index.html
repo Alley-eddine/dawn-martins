@@ -26,6 +26,9 @@
     <!-- Theme color -->
     <meta name="theme-color" content="#000000" />
 
+    <!-- Netlify Identity Widget -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
     <!-- Preload Google Fonts with font-display: swap -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,5 +52,17 @@
     <script src="/js/theme-vendors.min.js" defer></script>
     <script src="/js/main.js" defer></script>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Redirect after Netlify Identity login
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", user => {
+          if (!user) {
+            window.netlifyIdentity.on("login", () => {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
   </body>
 </html>
