@@ -9,6 +9,7 @@ export default function Home() {
 
   return (
     <div className="w-100">
+      <main>
       <Helmet>
         <title>Dawn Martins - Styliste et Designer de Mode</title>
         <meta name="description" content="Dawn Martins, jeune styliste parisienne. Decouvrez mes collections de mode: Meteore, Reminescence, Placidite et collaborations." />
@@ -129,6 +130,7 @@ export default function Home() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

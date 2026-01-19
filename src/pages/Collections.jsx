@@ -54,6 +54,7 @@ export default function Collections() {
 
   return (
     <div className="w-100">
+      <main>
       <Helmet>
         <title>Collections - Dawn Martins</title>
         <meta name="description" content="Explorez les collections de Dawn Martins: Meteore, Reminescence, Placidite, Contraste & Mouvement et collaborations." />
@@ -112,7 +113,7 @@ export default function Collections() {
                 <div className="collection-image">
                   <picture>
                     <source srcSet={collection.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                    <img src={collection.image} alt={collection.title} loading="lazy" />
+                    <img src={collection.image} alt={`Collection ${collection.title} par Dawn Martins`} loading="lazy" width="600" height="800" />
                   </picture>
                 </div>
                 <div className="collection-overlay">
@@ -127,6 +128,7 @@ export default function Collections() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

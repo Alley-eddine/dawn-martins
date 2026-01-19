@@ -8,6 +8,7 @@ export default function About() {
 
   return (
     <div className="w-100">
+      <main>
       <Helmet>
         <title>A propos - Dawn Martins</title>
         <meta name="description" content="Decouvrez Dawn Martins, jeune styliste parisienne etudiante en Bachelor Fashion Design a Lisaa Mode Paris. Contact et parcours." />
@@ -22,7 +23,7 @@ export default function About() {
             <div className="col-lg-5 col-md-6 text-center md-margin-50px-bottom wow animate__fadeInLeft">
               <picture>
                 <source srcSet="/images/reportage_meteore/HOME1.webp" type="image/webp" />
-                <img src="/images/reportage_meteore/HOME1.JPG" alt="Dawn Martins" className="w-100" loading="lazy" />
+                <img src="/images/reportage_meteore/HOME1.JPG" alt="Dawn Martins - Styliste et designer de mode parisienne" className="w-100" loading="lazy" width="600" height="800" />
               </picture>
             </div>
             <div className="col-lg-6 offset-lg-1 col-md-6 wow animate__fadeInRight">
@@ -115,6 +116,7 @@ export default function About() {
         </div>
       </section>
 
+      </main>
       <Footer />
     </div>
   );

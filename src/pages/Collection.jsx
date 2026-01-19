@@ -54,6 +54,7 @@ export default function Collection() {
 
   return (
     <div className="w-100 collection-page">
+      <main>
       <Helmet>
         <title>{collection.title} - Dawn Martins</title>
         <meta name="description" content={collection.description} />
@@ -75,6 +76,7 @@ export default function Collection() {
       {/* Gallery */}
       <Gallery jsonPath={collection.jsonPath} withLinks={false} />
 
+      </main>
       <Footer />
     </div>
   );
