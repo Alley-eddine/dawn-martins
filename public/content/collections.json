@@ -2,12 +2,12 @@
   "collections": [
     {
       "id": "meteore",
-      "title": "Meteore",
-      "subtitle": "Collection 2024",
+      "title": "METEORE",
+      "subtitle": "SS24",
       "year": "2024",
-      "description": "Meteore est ma premiere collection personnelle, presentee lors de mon propre defile de mode en premiere annee a Lisaa. Ce projet explore les contrastes entre la lumiere et l'obscurite, le mouvement et l'immobilite. Chaque piece raconte une histoire d'impact et de transformation.",
-      "image": "/images/reportage_meteore/HOME1.JPG",
-      "heroImage": "/images/reportage_meteore/look1-50.JPG",
+      "description": "Météore speaks of falling, speed, appearance, and disappearance. The silhouettes are conceived as bodies crossed by something greater than themselves. This collection marks a turning point: fashion becomes performative, almost narrative.",
+      "image": "/images/image00043.jpeg",
+      "heroImage": "/images/image00043.png",
       "photos": [
         "/images/meteore/image00008.jpeg",
         "/images/meteore/image00014.jpeg",
