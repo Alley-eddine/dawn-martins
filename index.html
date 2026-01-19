@@ -41,13 +41,13 @@
   </head>
   <body>
     <div id="root"></div>
-    <!-- Scripts du template POFO -->
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/bootsnav.js"></script>
-    <script src="/js/jquery.nav.js"></script>
-    <script src="/js/hamburger-menu.js"></script>
-    <script src="/js/theme-vendors.min.js"></script>
-    <script src="/js/main.js"></script>
+    <!-- Scripts du template POFO - defer pour ne pas bloquer le rendu -->
+    <script src="/js/jquery.min.js" defer></script>
+    <script src="/js/bootsnav.js" defer></script>
+    <script src="/js/jquery.nav.js" defer></script>
+    <script src="/js/hamburger-menu.js" defer></script>
+    <script src="/js/theme-vendors.min.js" defer></script>
+    <script src="/js/main.js" defer></script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
