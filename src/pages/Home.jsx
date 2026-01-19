@@ -14,7 +14,7 @@ export default function Home() {
         <meta name="description" content="Dawn Martins, jeune styliste parisienne. Decouvrez mes collections de mode: Meteore, Reminescence, Placidite et collaborations." />
       </Helmet>
 
-      <Header />
+      <Header transparent={true} />
 
       {/* Hero section */}
       <section

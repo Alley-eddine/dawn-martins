@@ -62,7 +62,7 @@ export default function Collections() {
       <Header />
 
       {/* Title section */}
-      <section className="wow animate__fadeIn">
+      <section className="wow animate__fadeIn collections-page-title">
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-7 text-center margin-50px-bottom sm-margin-30px-bottom">

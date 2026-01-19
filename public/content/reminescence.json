@@ -1,12 +1,28 @@
 {
   "images": [
-    { "image": "/images/reminescence/_DSC6353.JPG" },
-    { "image": "/images/reminescence/_DSC6465.JPG" },
-    { "image": "/images/reminescence/_DSC6615.JPG" },
-    { "image": "/images/reminescence/_DSC6621.JPG" },
-    { "image": "/images/reminescence/_DSC6624.JPG" },
-    { "image": "/images/reminescence/homeremi1.JPG" },
-    { "image": "/images/reminescence/homeremi2.JPG" },
-    { "image": "/images/reminescence/homeremi3.JPG" }
+    {
+      "image": "/images/reminescence/_DSC6353.JPG"
+    },
+    {
+      "image": "/images/reminescence/_DSC6465.JPG"
+    },
+    {
+      "image": "/images/reminescence/_DSC6615.JPG"
+    },
+    {
+      "image": "/images/reminescence/_DSC6621.JPG"
+    },
+    {
+      "image": "/images/reminescence/_DSC6624.JPG"
+    },
+    {
+      "image": "/images/reminescence/homeremi1.JPG"
+    },
+    {
+      "image": "/images/reminescence/homeremi2.JPG"
+    },
+    {
+      "image": "/images/reminescence/homeremi3.JPG"
+    }
   ]
 }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './Header.css';
 
-export default function Header({ isCollectionPage = false }) {
+export default function Header({ isCollectionPage = false, transparent = false }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
 
@@ -22,7 +22,7 @@ export default function Header({ isCollectionPage = false }) {
 
   return (
     <>
-      <header className={`site-header ${isCollectionPage ? 'collection-header' : ''}`}>
+      <header className={`site-header ${isCollectionPage ? 'collection-header' : ''} ${transparent ? 'transparent-header' : ''}`}>
         <div className="header-container">
           {/* Logo */}
           <Link to="/" className="header-logo">
@@ -82,14 +82,24 @@ export default function Header({ isCollectionPage = false }) {
           </ul>
 
           <div className="menu-footer">
-            <a
-              href="https://instagram.com/dawnmartinsparis/"
-              target="_blank"
-              rel="noreferrer"
-              className="social-link"
-            >
-              <i className="fa-brands fa-instagram"></i>
-            </a>
+            <div className="social-links">
+              <a
+                href="https://instagram.com/dawnmartinsparis/"
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+              >
+                <i className="fa-brands fa-instagram"></i>
+              </a>
+              <a
+                href="https://www.tiktok.com/@dawnmartinsparis"
+                target="_blank"
+                rel="noreferrer"
+                className="social-link"
+              >
+                <i className="fa-brands fa-tiktok"></i>
+              </a>
+            </div>
             <div className="menu-copyright">
               © 2026 Dawn Martins
             </div>

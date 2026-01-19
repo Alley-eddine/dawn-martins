@@ -1,5 +1,10 @@
 /* Collections Page Styles */
 
+/* Title section spacing */
+.collections-page-title {
+  padding-top: 60px;
+}
+
 /* Filter Bar */
 .collections-filter {
   display: flex;

@@ -40,6 +40,16 @@ export default function Footer() {
                       <i className="fa-brands fa-instagram"></i>
                     </a>
                   </li>
+                  <li>
+                    <a
+                      className="tiktok"
+                      href="https://www.tiktok.com/@dawnmartinsparis"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      <i className="fa-brands fa-tiktok"></i>
+                    </a>
+                  </li>
                 </ul>
               </div>
             </div>

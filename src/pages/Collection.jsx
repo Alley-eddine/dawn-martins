@@ -62,7 +62,7 @@ export default function Collection() {
       <Header isCollectionPage={true} />
 
       {/* Title section */}
-      <section className="wow animate__fadeIn gallery-section">
+      <section className="wow animate__fadeIn gallery-section" style={{ paddingTop: '60px' }}>
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-7 text-center margin-50px-bottom sm-margin-30px-bottom">
