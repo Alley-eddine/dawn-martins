@@ -32,8 +32,8 @@ export default function Collections() {
     <div className="w-100">
       <main>
       <Helmet>
-        <title>Collections - Dawn Martins</title>
-        <meta name="description" content="Explorez les collections de Dawn Martins: Meteore, Reminescence, Placidite, Contraste & Mouvement et collaborations." />
+        <title>Projects - Dawn Martins</title>
+        <meta name="description" content="Explore Dawn Martins' projects: Meteore, Reminescence, Placidite, Contrast & Movement and collaborations." />
       </Helmet>
 
       <Header />
@@ -43,8 +43,8 @@ export default function Collections() {
         <div className="container">
           <div className="row justify-content-center">
             <div className="col-lg-7 text-center margin-50px-bottom sm-margin-30px-bottom">
-              <h4 className="alt-font text-extra-dark-gray font-weight-600">Collections</h4>
-              <p className="text-medium-gray">Explorez mes differentes collections et collaborations</p>
+              <h4 className="alt-font text-extra-dark-gray font-weight-600">Projects</h4>
+              <p className="text-medium-gray">Explore my different collections and collaborations</p>
             </div>
           </div>
 
@@ -56,7 +56,7 @@ export default function Collections() {
                   className={`filter-btn ${filter === 'all' ? 'active' : ''}`}
                   onClick={() => setFilter('all')}
                 >
-                  Tout
+                  All
                 </button>
                 {years.map((year) => (
                   <button
@@ -86,7 +86,7 @@ export default function Collections() {
                 <div className="collection-image">
                   <picture>
                     <source srcSet={collection.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                    <img src={collection.image} alt={`Collection ${collection.title} par Dawn Martins`} loading="lazy" width="600" height="800" />
+                    <img src={collection.image} alt={`${collection.title} by Dawn Martins`} loading="lazy" width="600" height="800" />
                   </picture>
                 </div>
                 <div className="collection-overlay">

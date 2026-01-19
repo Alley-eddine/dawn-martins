@@ -32,8 +32,8 @@ export default function Home() {
     <div className="w-100">
       <main>
       <Helmet>
-        <title>Dawn Martins - Styliste et Designer de Mode</title>
-        <meta name="description" content="Dawn Martins, jeune styliste parisienne. Decouvrez mes collections de mode: Meteore, Reminescence, Placidite et collaborations." />
+        <title>Dawn Martins - Fashion Designer</title>
+        <meta name="description" content="Dawn Martins, young Parisian fashion designer. Discover my fashion collections: Meteore, Reminescence, Placidite and collaborations." />
       </Helmet>
 
       <Header transparent={true} />

@@ -10,8 +10,8 @@ export default function About() {
     <div className="w-100">
       <main>
       <Helmet>
-        <title>A propos - Dawn Martins</title>
-        <meta name="description" content="Decouvrez Dawn Martins, jeune styliste parisienne etudiante en Bachelor Fashion Design a Lisaa Mode Paris. Contact et parcours." />
+        <title>About - Dawn Martins</title>
+        <meta name="description" content="Discover Dawn Martins, young Parisian fashion designer studying Bachelor Fashion Design at Lisaa Mode Paris. Contact and background." />
       </Helmet>
 
       <Header />
@@ -23,7 +23,7 @@ export default function About() {
             <div className="col-lg-5 col-md-6 text-center md-margin-50px-bottom wow animate__fadeInLeft">
               <picture>
                 <source srcSet="/images/reportage_meteore/HOME1.webp" type="image/webp" />
-                <img src="/images/reportage_meteore/HOME1.JPG" alt="Dawn Martins - Styliste et designer de mode parisienne" className="w-100" loading="lazy" width="600" height="800" />
+                <img src="/images/reportage_meteore/HOME1.JPG" alt="Dawn Martins - Parisian fashion designer" className="w-100" loading="lazy" width="600" height="800" />
               </picture>
             </div>
             <div className="col-lg-6 offset-lg-1 col-md-6 wow animate__fadeInRight">
@@ -31,21 +31,21 @@ export default function About() {
                 Dawn Martins
               </h5>
               <p className="text-medium line-height-28 margin-30px-bottom">
-                Etudiante en Bachelor Fashion Design a Lisaa Mode Paris, Dawn Martins est une jeune styliste passionnee par la mode et le design.
+                Bachelor Fashion Design student at Lisaa Mode Paris, Dawn Martins is a young fashion designer passionate about fashion and design.
               </p>
               <p className="text-medium line-height-28 margin-30px-bottom">
-                Des sa premiere annee, elle s'est illustree avec un projet personnel ambitieux : l'organisation de son propre defile de mode avec sa collection "Meteore".
+                In her first year, she distinguished herself with an ambitious personal project: organizing her own fashion show with her collection "Meteore".
               </p>
               <p className="text-medium line-height-28 margin-30px-bottom">
-                Son travail explore les contrastes, le mouvement et les textures, creant des pieces uniques qui racontent une histoire.
+                Her work explores contrasts, movement, and textures, creating unique pieces that tell a story.
               </p>
 
-              {/* Parcours */}
+              {/* Background */}
               <div className="margin-40px-top">
                 <div className="row">
                   <div className="col-12 margin-20px-bottom">
                     <span className="alt-font text-medium-gray text-uppercase text-extra-small">
-                      2023 - Aujourd'hui
+                      2023 - Present
                     </span>
                     <span className="alt-font text-extra-dark-gray font-weight-600 d-block">
                       Lisaa Mode Paris
@@ -66,7 +66,7 @@ export default function About() {
             <div className="col-lg-6 col-md-8 text-center margin-50px-bottom">
               <h4 className="alt-font text-extra-dark-gray font-weight-600">Contact</h4>
               <p className="text-medium">
-                Vous avez un projet ou une question ? N'hesitez pas a me contacter.
+                Have a project or a question? Feel free to contact me.
               </p>
             </div>
           </div>
@@ -102,12 +102,12 @@ export default function About() {
               </div>
             </div>
 
-            {/* Localisation */}
+            {/* Location */}
             <div className="col-lg-4 col-md-6 text-center margin-30px-bottom">
               <div className="padding-30px-all bg-white box-shadow-light">
                 <i className="fa-solid fa-location-dot icon-medium text-deep-pink margin-20px-bottom d-block"></i>
                 <span className="alt-font text-extra-dark-gray font-weight-600 d-block margin-10px-bottom">
-                  Localisation
+                  Location
                 </span>
                 <span className="text-medium">Paris, France</span>
               </div>

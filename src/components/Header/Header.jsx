@@ -58,7 +58,7 @@ export default function Header({ isCollectionPage = false, transparent = false }
                 onClick={closeMenu}
                 className={location.pathname === '/' ? 'active' : ''}
               >
-                Accueil
+                Home
               </Link>
             </li>
             <li>
@@ -67,7 +67,7 @@ export default function Header({ isCollectionPage = false, transparent = false }
                 onClick={closeMenu}
                 className={location.pathname === '/collections' ? 'active' : ''}
               >
-                Collections
+                Projects
               </Link>
             </li>
             <li>
@@ -76,7 +76,7 @@ export default function Header({ isCollectionPage = false, transparent = false }
                 onClick={closeMenu}
                 className={location.pathname === '/about' ? 'active' : ''}
               >
-                A propos
+                About
               </Link>
             </li>
           </ul>

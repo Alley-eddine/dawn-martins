@@ -42,7 +42,7 @@
       "title": "Reminescence",
       "subtitle": "Collection 2024",
       "year": "2024",
-      "description": "Reminescence est une exploration des souvenirs a travers la mode. Cette collection puise dans les emotions du passe pour creer des pieces intemporelles qui evoquent la nostalgie et la beaute des moments vecus.",
+      "description": "Reminescence is an exploration of memories through fashion. This collection draws from past emotions to create timeless pieces that evoke nostalgia and the beauty of lived moments.",
       "image": "/images/reminescence/_DSC6353.JPG",
       "heroImage": "/images/reminescence/_DSC6465.JPG",
       "photos": [
@@ -61,7 +61,7 @@
       "title": "Placidite",
       "subtitle": "Collection 2025",
       "year": "2025",
-      "description": "Placidite exprime la serenite a travers le design textile. Cette collection se caracterise par des lignes epurees, des textures douces et une palette apaisante qui invite au calme et a la contemplation.",
+      "description": "Placidite expresses serenity through textile design. This collection features clean lines, soft textures, and a soothing palette that invites calm and contemplation.",
       "image": "/images/placidite/202505_dawn-11.JPG",
       "heroImage": "/images/placidite/202505_dawn-12.JPG",
       "photos": [
@@ -85,10 +85,10 @@
     },
     {
       "id": "contraste",
-      "title": "Contraste & Mouvement",
+      "title": "Contrast & Movement",
       "subtitle": "Collection 2024",
       "year": "2024",
-      "description": "Contraste & Mouvement joue sur les tensions entre les textures, les formes et le dynamisme. Cette collection capture l'energie du mouvement fige dans le tissu, creant des pieces sculpturales et expressives.",
+      "description": "Contrast & Movement plays with tensions between textures, shapes, and dynamism. This collection captures the energy of movement frozen in fabric, creating sculptural and expressive pieces.",
       "image": "/images/contraste_mouvement/2401_dawn_drapé02014.jpg",
       "heroImage": "/images/contraste_mouvement/home1.jpg",
       "photos": [
@@ -115,9 +115,9 @@
     {
       "id": "collab",
       "title": "Collaborations",
-      "subtitle": "Projets collaboratifs",
+      "subtitle": "Collaborative projects",
       "year": "2024",
-      "description": "Cette section regroupe mes projets collaboratifs avec d'autres createurs, photographes et marques. Chaque collaboration est une opportunite d'explorer de nouvelles visions et de repousser les limites de ma creativite.",
+      "description": "This section gathers my collaborative projects with other creators, photographers, and brands. Each collaboration is an opportunity to explore new visions and push the limits of my creativity.",
       "image": "/images/collab/homecollab1.JPG",
       "heroImage": "/images/collab/homecollab2.jpeg",
       "photos": [
@@ -129,18 +129,6 @@
         "/images/collab/image00060.jpeg",
         "/images/collab/image00061.jpeg",
         "/images/collab/IMG_3047.JPG"
-      ]
-    },
-    {
-      "id": "test",
-      "title": "test",
-      "subtitle": "Collection 2026",
-      "year": "2026",
-      "description": "eargarerezargvrerveazevreezsvrsrtshsterht",
-      "image": "/images/DAWNblack.svg",
-      "heroImage": "/images/fichier-7-1-.svg",
-      "photos": [
-        "/images/logo.svg"
       ]
     }
   ]

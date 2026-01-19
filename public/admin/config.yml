@@ -7,132 +7,133 @@ local_backend: true
 media_folder: "public/images"
 public_folder: "/images"
 
-locale: "fr"
+locale: "en"
 
 collections:
-  # Page d'accueil
+  # Homepage
   - name: "homepage"
-    label: "Page d'accueil"
+    label: "Homepage"
     files:
       - name: "homepage-content"
-        label: "Contenu de la page d'accueil"
+        label: "Homepage content"
         file: "public/content/homepage.json"
         fields:
-          # Section Hero (banniere)
+          # Hero section (banner)
           - name: "hero"
-            label: "Banniere principale"
+            label: "Main banner"
             widget: "object"
             fields:
               - name: "backgroundImage"
-                label: "Image de fond"
+                label: "Background image"
                 widget: "image"
-                hint: "Grande image affichee en arriere-plan"
+                hint: "Large image displayed as background"
               - name: "subtitle"
-                label: "Sous-titre"
+                label: "Subtitle"
                 widget: "string"
-                hint: "Petit texte au-dessus du titre (ex: Work hard, play hard)"
+                hint: "Small text above the title (e.g. Work hard, play hard)"
               - name: "title"
-                label: "Titre principal"
+                label: "Main title"
                 widget: "string"
-                hint: "Grand titre affiche sur la banniere"
+                hint: "Large title displayed on the banner"
 
-          # Section About
+          # About section
           - name: "about"
-            label: "Section presentation"
+            label: "Presentation section"
             widget: "object"
             fields:
               - name: "subtitle"
-                label: "Sous-titre"
+                label: "Subtitle"
                 widget: "string"
               - name: "title"
-                label: "Titre"
+                label: "Title"
                 widget: "string"
 
-          # Galerie photos
+          # Photo gallery
           - name: "gallery"
-            label: "Galerie photos"
+            label: "Photo gallery"
             widget: "list"
             fields:
               - name: "image"
                 label: "Photo"
                 widget: "image"
               - name: "link"
-                label: "Lien vers collection"
+                label: "Link to project"
                 widget: "select"
                 options:
                   - { label: "Meteore", value: "/collection/meteore" }
                   - { label: "Reminescence", value: "/collection/reminescence" }
                   - { label: "Placidite", value: "/collection/placidite" }
-                  - { label: "Contraste & Mouvement", value: "/collection/contraste" }
+                  - { label: "Contrast & Movement", value: "/collection/contraste" }
                   - { label: "Collaborations", value: "/collection/collab" }
 
           # Articles
           - name: "articles"
-            label: "Articles presse"
+            label: "Press articles"
             widget: "list"
             fields:
               - name: "date"
                 label: "Date"
                 widget: "string"
-                hint: "Ex: 11 Octobre 2024"
+                hint: "E.g. October 11, 2024"
               - name: "title"
-                label: "Titre de l'article"
+                label: "Article title"
                 widget: "string"
               - name: "description"
                 label: "Description"
                 widget: "text"
               - name: "link"
-                label: "Lien externe"
+                label: "External link"
                 widget: "string"
                 required: false
-                hint: "URL vers l'article (laisser vide si pas de lien)"
+                hint: "URL to the article (leave empty if no link)"
               - name: "author"
-                label: "Auteur / Source"
+                label: "Author / Source"
                 widget: "string"
 
-  # Collections
+  # Projects
   - name: "collections"
-    label: "Collections"
+    label: "Projects"
     files:
       - name: "all-collections"
-        label: "Gerer les collections"
+        label: "Manage projects"
         file: "public/content/collections.json"
         fields:
           - name: "collections"
-            label: "Collections"
+            label: "Projects"
             widget: "list"
             collapsed: false
             fields:
               - name: "id"
                 label: "ID"
                 widget: "string"
-                hint: "Identifiant unique en minuscules sans espaces (ex: meteore, nouvelle-collection)"
+                hint: "Unique identifier in lowercase without spaces (e.g. meteore, new-project)"
               - name: "title"
-                label: "Titre"
+                label: "Title"
                 widget: "string"
               - name: "subtitle"
-                label: "Sous-titre"
+                label: "Subtitle"
                 widget: "string"
               - name: "year"
-                label: "Annee"
+                label: "Year"
                 widget: "string"
-                hint: "Ex: 2024, 2025"
+                hint: "E.g. 2024, 2025"
               - name: "description"
                 label: "Description"
                 widget: "text"
-                hint: "Texte de presentation affiche sur la page de la collection"
+                hint: "Presentation text displayed on the project page"
               - name: "image"
-                label: "Image miniature"
+                label: "Thumbnail image"
                 widget: "image"
-                hint: "Image affichee dans la grille des collections"
+                hint: "Image displayed in the projects grid"
               - name: "heroImage"
-                label: "Image principale"
+                label: "Main image"
                 widget: "image"
-                hint: "Grande image affichee sur la page de la collection"
+                hint: "Large image displayed on the project page"
               - name: "photos"
-                label: "Photos de la collection"
+                label: "Project photos"
                 widget: "list"
-                field:
-                  name: "photo"
-                  label: "Photo"
-                  widget: "image"
+                summary: "{{fields.photo}}"
+                fields:
+                  - name: "photo"
+                    label: "Photo"
+                    widget: "image"

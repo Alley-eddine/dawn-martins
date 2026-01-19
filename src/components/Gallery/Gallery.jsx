@@ -64,7 +64,7 @@ export default function Gallery({ jsonPath, photos, withLinks = false }) {
           <div className="col-12 lightbox-portfolio p-0">
             <div id="gallery-container" className="justified-gallery">
               {images.map((item, index) => {
-                const imgSrc = item.image || item;
+                const imgSrc = item.image || item.photo || item;
                 const link = item.link || '#';
                 const delay = index % 3 === 1 ? '0.2s' : index % 3 === 2 ? '0.4s' : undefined;
 

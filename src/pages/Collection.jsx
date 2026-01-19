@@ -32,7 +32,7 @@ export default function Collection() {
         <Header isCollectionPage={true} />
         <section className="wow animate__fadeIn" style={{ paddingTop: '100px', minHeight: '50vh' }}>
           <div className="container text-center">
-            <p>Chargement...</p>
+            <p>Loading...</p>
           </div>
         </section>
         <Footer />
@@ -46,7 +46,7 @@ export default function Collection() {
         <Header isCollectionPage={true} />
         <section className="wow animate__fadeIn" style={{ paddingTop: '100px' }}>
           <div className="container text-center">
-            <h2>Collection non trouvee</h2>
+            <h2>Project not found</h2>
           </div>
         </section>
         <Footer />
