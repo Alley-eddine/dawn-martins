@@ -10,7 +10,87 @@ public_folder: "/images"
 locale: "fr"
 
 collections:
-  # Toutes les collections (titres, descriptions, photos)
+  # Page d'accueil
+  - name: "homepage"
+    label: "Page d'accueil"
+    files:
+      - name: "homepage-content"
+        label: "Contenu de la page d'accueil"
+        file: "public/content/homepage.json"
+        fields:
+          # Section Hero (banniere)
+          - name: "hero"
+            label: "Banniere principale"
+            widget: "object"
+            fields:
+              - name: "backgroundImage"
+                label: "Image de fond"
+                widget: "image"
+                hint: "Grande image affichee en arriere-plan"
+              - name: "subtitle"
+                label: "Sous-titre"
+                widget: "string"
+                hint: "Petit texte au-dessus du titre (ex: Work hard, play hard)"
+              - name: "title"
+                label: "Titre principal"
+                widget: "string"
+                hint: "Grand titre affiche sur la banniere"
+
+          # Section About
+          - name: "about"
+            label: "Section presentation"
+            widget: "object"
+            fields:
+              - name: "subtitle"
+                label: "Sous-titre"
+                widget: "string"
+              - name: "title"
+                label: "Titre"
+                widget: "string"
+
+          # Galerie photos
+          - name: "gallery"
+            label: "Galerie photos"
+            widget: "list"
+            fields:
+              - name: "image"
+                label: "Photo"
+                widget: "image"
+              - name: "link"
+                label: "Lien vers collection"
+                widget: "select"
+                options:
+                  - { label: "Meteore", value: "/collection/meteore" }
+                  - { label: "Reminescence", value: "/collection/reminescence" }
+                  - { label: "Placidite", value: "/collection/placidite" }
+                  - { label: "Contraste & Mouvement", value: "/collection/contraste" }
+                  - { label: "Collaborations", value: "/collection/collab" }
+
+          # Articles
+          - name: "articles"
+            label: "Articles presse"
+            widget: "list"
+            fields:
+              - name: "date"
+                label: "Date"
+                widget: "string"
+                hint: "Ex: 11 Octobre 2024"
+              - name: "title"
+                label: "Titre de l'article"
+                widget: "string"
+              - name: "description"
+                label: "Description"
+                widget: "text"
+              - name: "link"
+                label: "Lien externe"
+                widget: "string"
+                required: false
+                hint: "URL vers l'article (laisser vide si pas de lien)"
+              - name: "author"
+                label: "Auteur / Source"
+                widget: "string"
+
+  # Collections
   - name: "collections"
     label: "Collections"
     files:
@@ -56,28 +136,3 @@ collections:
                   name: "photo"
                   label: "Photo"
                   widget: "image"
-
-  # Page d'accueil
-  - name: "homepage"
-    label: "Page d'accueil"
-    files:
-      - name: "homepage-photos"
-        label: "Photos de la page d'accueil"
-        file: "public/content/homepage.json"
-        fields:
-          - name: "images"
-            label: "Photos"
-            widget: "list"
-            fields:
-              - name: "image"
-                label: "Photo"
-                widget: "image"
-              - name: "link"
-                label: "Lien vers collection"
-                widget: "select"
-                options:
-                  - { label: "Meteore", value: "/collection/meteore" }
-                  - { label: "Reminescence", value: "/collection/reminescence" }
-                  - { label: "Placidite", value: "/collection/placidite" }
-                  - { label: "Contraste & Mouvement", value: "/collection/contraste" }
-                  - { label: "Collaborations", value: "/collection/collab" }

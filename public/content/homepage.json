@@ -1,64 +1,44 @@
 {
-  "images": [
+  "hero": {
+    "backgroundImage": "/images/reportage_meteore/homebanniere.JPG",
+    "subtitle": "Work hard, play hard",
+    "title": "Creations designed by DAWN."
+  },
+  "about": {
+    "subtitle": "This is who I am",
+    "title": "Creations that reflect your personality."
+  },
+  "gallery": [
+    { "image": "/images/contraste_mouvement/2401_dawn_drapé02014.jpg", "link": "/collection/contraste" },
+    { "image": "/images/contraste_mouvement/home3.jpg", "link": "/collection/contraste" },
+    { "image": "/images/contraste_mouvement/home4.jpg", "link": "/collection/contraste" },
+    { "image": "/images/contraste_mouvement/home1.jpg", "link": "/collection/contraste" },
+    { "image": "/images/reminescence/homeremi3.JPG", "link": "/collection/reminescence" },
+    { "image": "/images/reminescence/homeremi2.JPG", "link": "/collection/reminescence" },
+    { "image": "/images/reminescence/homeremi1.JPG", "link": "/collection/reminescence" },
+    { "image": "/images/collab/homecollab1.JPG", "link": "/collection/collab" },
+    { "image": "/images/collab/homecollab2.jpeg", "link": "/collection/collab" },
+    { "image": "/images/collab/homecollab3.jpeg", "link": "/collection/collab" },
+    { "image": "/images/reportage_meteore/look1-50.JPG", "link": "/collection/meteore" },
+    { "image": "/images/placidite/homeremi2.JPG", "link": "/collection/placidite" },
+    { "image": "/images/placidite/homepla1.JPG", "link": "/collection/placidite" },
+    { "image": "/images/reportage_meteore/HOME1.JPG", "link": "/collection/meteore" },
+    { "image": "/images/collab/homecollab4.JPG", "link": "/collection/collab" }
+  ],
+  "articles": [
     {
-      "image": "/images/contraste_mouvement/2401_dawn_drapé02014.jpg",
-      "link": "/collection/contraste"
+      "date": "October 11, 2024",
+      "title": "First-year Bachelor student Dawn organizes her own fashion show",
+      "description": "Enrolled at Lisaa Mode Paris in September 2023, Fashion Design program, Dawn Martins stood out from her first year with an ambitious personal project...",
+      "link": "",
+      "author": "Lisaa Mode Paris"
     },
     {
-      "image": "/images/contraste_mouvement/home3.jpg",
-      "link": "/collection/contraste"
-    },
-    {
-      "image": "/images/contraste_mouvement/home4.jpg",
-      "link": "/collection/contraste"
-    },
-    {
-      "image": "/images/contraste_mouvement/home1.jpg",
-      "link": "/collection/contraste"
-    },
-    {
-      "image": "/images/reminescence/homeremi3.JPG",
-      "link": "/collection/reminescence"
-    },
-    {
-      "image": "/images/reminescence/homeremi2.JPG",
-      "link": "/collection/reminescence"
-    },
-    {
-      "image": "/images/reminescence/homeremi1.JPG",
-      "link": "/collection/reminescence"
-    },
-    {
-      "image": "/images/collab/homecollab1.JPG",
-      "link": "/collection/collab"
-    },
-    {
-      "image": "/images/collab/homecollab2.jpeg",
-      "link": "/collection/collab"
-    },
-    {
-      "image": "/images/collab/homecollab3.jpeg",
-      "link": "/collection/collab"
-    },
-    {
-      "image": "/images/reportage_meteore/look1-50.JPG",
-      "link": "/collection/meteore"
-    },
-    {
-      "image": "/images/placidite/homeremi2.JPG",
-      "link": "/collection/placidite"
-    },
-    {
-      "image": "/images/placidite/homepla1.JPG",
-      "link": "/collection/placidite"
-    },
-    {
-      "image": "/images/reportage_meteore/HOME1.JPG",
-      "link": "/collection/meteore"
-    },
-    {
-      "image": "/images/collab/homecollab4.JPG",
-      "link": "/collection/collab"
+      "date": "July 21, 2025",
+      "title": "Dawn Martins, bold young designer, reveals her talent.",
+      "description": "Discover the article written by the Hauts-de-Seine department.",
+      "link": "https://www.hauts-de-seine.fr/toutes-les-actualites/detail/revele-ton-talent-dawn-martins-au-domaine-de-sceaux",
+      "author": "Hauts-de-Seine"
     }
   ]
 }
