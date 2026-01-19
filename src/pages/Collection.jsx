@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import Header from '../components/Header';
@@ -5,44 +6,45 @@ import Footer from '../components/Footer';
 import Gallery from '../components/Gallery';
 import useInitScripts from '../hooks/useInitScripts';
 
-const collectionsData = {
-  meteore: {
-    title: 'Meteore',
-    jsonPath: '/content/meteore.json',
-    description: 'Collection Meteore par Dawn Martins - Un projet ambitieux presente lors de son propre defile de mode.',
-  },
-  reminescence: {
-    title: 'Reminescence',
-    jsonPath: '/content/reminescence.json',
-    description: 'Collection Reminescence par Dawn Martins - Une exploration des souvenirs a travers la mode.',
-  },
-  placidite: {
-    title: 'Placidite',
-    jsonPath: '/content/placidite.json',
-    description: 'Collection Placidite par Dawn Martins - La serenite exprimee a travers le design textile.',
-  },
-  contraste: {
-    title: 'Contraste & Mouvement',
-    jsonPath: '/content/contraste.json',
-    description: 'Collection Contraste & Mouvement par Dawn Martins - Jeux de textures et dynamisme.',
-  },
-  collab: {
-    title: 'Collaborations',
-    jsonPath: '/content/collab.json',
-    description: 'Collaborations de Dawn Martins - Projets realises avec d\'autres createurs et marques.',
-  },
-};
-
 export default function Collection() {
   useInitScripts();
   const { slug } = useParams();
-  const collection = collectionsData[slug];
+  const [collection, setCollection] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/content/collections.json')
+      .then((res) => res.json())
+      .then((data) => {
+        const found = data.collections.find(c => c.id === slug);
+        setCollection(found || null);
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log('Erreur chargement collection:', err);
+        setLoading(false);
+      });
+  }, [slug]);
+
+  if (loading) {
+    return (
+      <div className="w-100 collection-page">
+        <Header isCollectionPage={true} />
+        <section className="wow animate__fadeIn" style={{ paddingTop: '100px', minHeight: '50vh' }}>
+          <div className="container text-center">
+            <p>Chargement...</p>
+          </div>
+        </section>
+        <Footer />
+      </div>
+    );
+  }
 
   if (!collection) {
     return (
       <div className="w-100 collection-page">
         <Header isCollectionPage={true} />
-        <section className="wow animate__fadeIn">
+        <section className="wow animate__fadeIn" style={{ paddingTop: '100px' }}>
           <div className="container text-center">
             <h2>Collection non trouvee</h2>
           </div>
@@ -62,19 +64,42 @@ export default function Collection() {
 
       <Header isCollectionPage={true} />
 
-      {/* Title section */}
-      <section className="wow animate__fadeIn gallery-section" style={{ paddingTop: '60px' }}>
+      {/* Hero section avec image et description */}
+      <section className="wow animate__fadeIn" style={{ paddingTop: '80px', paddingBottom: '60px' }}>
         <div className="container">
-          <div className="row justify-content-center">
-            <div className="col-lg-7 text-center margin-50px-bottom sm-margin-30px-bottom">
-              <h4 className="alt-font text-extra-dark-gray font-weight-600">{collection.title}</h4>
+          <div className="row align-items-center">
+            {/* Image */}
+            <div className="col-lg-5 col-md-6 text-center md-margin-50px-bottom wow animate__fadeInLeft">
+              <picture>
+                <source srcSet={collection.heroImage?.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
+                <img
+                  src={collection.heroImage || collection.image}
+                  alt={collection.title}
+                  className="w-100"
+                  style={{ maxHeight: '600px', objectFit: 'cover' }}
+                  width="600"
+                  height="800"
+                />
+              </picture>
+            </div>
+            {/* Texte */}
+            <div className="col-lg-6 offset-lg-1 col-md-6 wow animate__fadeInRight">
+              <span className="text-extra-small alt-font letter-spacing-2 text-uppercase margin-15px-bottom d-inline-block text-medium-gray">
+                {collection.subtitle}
+              </span>
+              <h2 className="alt-font text-extra-dark-gray font-weight-600 margin-25px-bottom">
+                {collection.title}
+              </h2>
+              <p className="text-medium line-height-28 margin-30px-bottom text-medium-gray">
+                {collection.description}
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* Gallery */}
-      <Gallery jsonPath={collection.jsonPath} withLinks={false} />
+      <Gallery photos={collection.photos} withLinks={false} />
 
       </main>
       <Footer />

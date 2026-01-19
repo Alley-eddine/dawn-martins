@@ -2,8 +2,7 @@ backend:
   name: git-gateway
   branch: main
 
-local_backend:
-  url: http://localhost:54112/api/v1
+local_backend: true
 
 media_folder: "public/images"
 public_folder: "/images"
@@ -11,71 +10,59 @@ public_folder: "/images"
 locale: "fr"
 
 collections:
+  # Toutes les collections (titres, descriptions, photos)
   - name: "collections"
     label: "Collections"
     files:
-      - name: "meteore"
-        label: "Collection Meteore"
-        file: "public/content/meteore.json"
+      - name: "all-collections"
+        label: "Gerer les collections"
+        file: "public/content/collections.json"
         fields:
-          - name: "images"
-            label: "Photos"
+          - name: "collections"
+            label: "Collections"
             widget: "list"
-            field:
-              name: "image"
-              label: "Photo"
-              widget: "image"
+            collapsed: false
+            fields:
+              - name: "id"
+                label: "ID"
+                widget: "string"
+                hint: "Identifiant unique en minuscules sans espaces (ex: meteore, nouvelle-collection)"
+              - name: "title"
+                label: "Titre"
+                widget: "string"
+              - name: "subtitle"
+                label: "Sous-titre"
+                widget: "string"
+              - name: "year"
+                label: "Annee"
+                widget: "string"
+                hint: "Ex: 2024, 2025"
+              - name: "description"
+                label: "Description"
+                widget: "text"
+                hint: "Texte de presentation affiche sur la page de la collection"
+              - name: "image"
+                label: "Image miniature"
+                widget: "image"
+                hint: "Image affichee dans la grille des collections"
+              - name: "heroImage"
+                label: "Image principale"
+                widget: "image"
+                hint: "Grande image affichee sur la page de la collection"
+              - name: "photos"
+                label: "Photos de la collection"
+                widget: "list"
+                field:
+                  name: "photo"
+                  label: "Photo"
+                  widget: "image"
 
-      - name: "reminescence"
-        label: "Collection Reminescence"
-        file: "public/content/reminescence.json"
-        fields:
-          - name: "images"
-            label: "Photos"
-            widget: "list"
-            field:
-              name: "image"
-              label: "Photo"
-              widget: "image"
-
-      - name: "collab"
-        label: "Collaborations"
-        file: "public/content/collab.json"
-        fields:
-          - name: "images"
-            label: "Photos"
-            widget: "list"
-            field:
-              name: "image"
-              label: "Photo"
-              widget: "image"
-
-      - name: "placidite"
-        label: "Collection Placidite"
-        file: "public/content/placidite.json"
-        fields:
-          - name: "images"
-            label: "Photos"
-            widget: "list"
-            field:
-              name: "image"
-              label: "Photo"
-              widget: "image"
-
-      - name: "contraste"
-        label: "Contraste & Mouvement"
-        file: "public/content/contraste.json"
-        fields:
-          - name: "images"
-            label: "Photos"
-            widget: "list"
-            field:
-              name: "image"
-              label: "Photo"
-              widget: "image"
-
-      - name: "homepage"
-        label: "Photos Accueil"
+  # Page d'accueil
+  - name: "homepage"
+    label: "Page d'accueil"
+    files:
+      - name: "homepage-photos"
+        label: "Photos de la page d'accueil"
         file: "public/content/homepage.json"
         fields:
           - name: "images"

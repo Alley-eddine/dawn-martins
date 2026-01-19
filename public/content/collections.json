@@ -1,0 +1,147 @@
+{
+  "collections": [
+    {
+      "id": "meteore",
+      "title": "Meteore",
+      "subtitle": "Collection 2024",
+      "year": "2024",
+      "description": "Meteore est ma premiere collection personnelle, presentee lors de mon propre defile de mode en premiere annee a Lisaa. Ce projet explore les contrastes entre la lumiere et l'obscurite, le mouvement et l'immobilite. Chaque piece raconte une histoire d'impact et de transformation.",
+      "image": "/images/reportage_meteore/HOME1.JPG",
+      "heroImage": "/images/reportage_meteore/look1-50.JPG",
+      "photos": [
+        "/images/meteore/image00008.jpeg",
+        "/images/meteore/image00014.jpeg",
+        "/images/meteore/image00015.jpeg",
+        "/images/meteore/image00023.jpeg",
+        "/images/meteore/image00026.jpeg",
+        "/images/meteore/image00027.jpeg",
+        "/images/meteore/image00030.jpeg",
+        "/images/meteore/image00033.jpeg",
+        "/images/meteore/image00041.jpeg",
+        "/images/meteore/image00043.jpeg",
+        "/images/meteore/image00044.jpeg",
+        "/images/meteore/image00045.jpeg",
+        "/images/meteore/image00047.jpeg",
+        "/images/meteore/image00049.jpeg",
+        "/images/meteore/image00051.jpeg",
+        "/images/meteore/image00053.jpeg",
+        "/images/meteore/image00056.jpeg",
+        "/images/meteore/IMG_0124.jpeg",
+        "/images/meteore/IMG_0178.jpeg",
+        "/images/meteore/IMG_0287.jpeg",
+        "/images/meteore/IMG_0292.jpeg",
+        "/images/meteore/IMG_0302.jpeg",
+        "/images/meteore/IMG_0334.jpeg",
+        "/images/meteore/meteorejpeg-3.JPG",
+        "/images/meteore/meteorejpeg-4.JPG",
+        "/images/meteore/meteorejpeg-8.JPG"
+      ]
+    },
+    {
+      "id": "reminescence",
+      "title": "Reminescence",
+      "subtitle": "Collection 2024",
+      "year": "2024",
+      "description": "Reminescence est une exploration des souvenirs a travers la mode. Cette collection puise dans les emotions du passe pour creer des pieces intemporelles qui evoquent la nostalgie et la beaute des moments vecus.",
+      "image": "/images/reminescence/_DSC6353.JPG",
+      "heroImage": "/images/reminescence/_DSC6465.JPG",
+      "photos": [
+        "/images/reminescence/_DSC6353.JPG",
+        "/images/reminescence/_DSC6465.JPG",
+        "/images/reminescence/_DSC6615.JPG",
+        "/images/reminescence/_DSC6621.JPG",
+        "/images/reminescence/_DSC6624.JPG",
+        "/images/reminescence/homeremi1.JPG",
+        "/images/reminescence/homeremi2.JPG",
+        "/images/reminescence/homeremi3.JPG"
+      ]
+    },
+    {
+      "id": "placidite",
+      "title": "Placidite",
+      "subtitle": "Collection 2025",
+      "year": "2025",
+      "description": "Placidite exprime la serenite a travers le design textile. Cette collection se caracterise par des lignes epurees, des textures douces et une palette apaisante qui invite au calme et a la contemplation.",
+      "image": "/images/placidite/202505_dawn-11.JPG",
+      "heroImage": "/images/placidite/202505_dawn-12.JPG",
+      "photos": [
+        "/images/placidite/202505_dawn-5.JPG",
+        "/images/placidite/202505_dawn-6.JPG",
+        "/images/placidite/202505_dawn-8.JPG",
+        "/images/placidite/202505_dawn-9.JPG",
+        "/images/placidite/202505_dawn-11.JPG",
+        "/images/placidite/202505_dawn-12.JPG",
+        "/images/placidite/202505_dawn-15.JPG",
+        "/images/placidite/202505_dawn-16.JPG",
+        "/images/placidite/202505_dawn-21.JPG",
+        "/images/placidite/202505_dawn-26.jpg",
+        "/images/placidite/202505_dawn-28.jpg",
+        "/images/placidite/202505_dawn-29.jpg",
+        "/images/placidite/202505_dawn-35.jpg",
+        "/images/placidite/202505_dawn-46.jpg",
+        "/images/placidite/homepla1.JPG",
+        "/images/placidite/homeremi2.JPG"
+      ]
+    },
+    {
+      "id": "contraste",
+      "title": "Contraste & Mouvement",
+      "subtitle": "Collection 2024",
+      "year": "2024",
+      "description": "Contraste & Mouvement joue sur les tensions entre les textures, les formes et le dynamisme. Cette collection capture l'energie du mouvement fige dans le tissu, creant des pieces sculpturales et expressives.",
+      "image": "/images/contraste_mouvement/2401_dawn_drapé02014.jpg",
+      "heroImage": "/images/contraste_mouvement/home1.jpg",
+      "photos": [
+        "/images/contraste_mouvement/2401_dawn_drapé00972.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé02014.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé02025-Modifier.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé02364.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé02413.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé03476.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé03518.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé03529.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé04097-Modifier-Modifier.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé04102-Modifier-Modifier.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé04126-Modifier.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé04162-Modifier.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé06819.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé09909.jpg",
+        "/images/contraste_mouvement/2401_dawn_drapé09912.jpg",
+        "/images/contraste_mouvement/home1.jpg",
+        "/images/contraste_mouvement/home3.jpg",
+        "/images/contraste_mouvement/home4.jpg"
+      ]
+    },
+    {
+      "id": "collab",
+      "title": "Collaborations",
+      "subtitle": "Projets collaboratifs",
+      "year": "2024",
+      "description": "Cette section regroupe mes projets collaboratifs avec d'autres createurs, photographes et marques. Chaque collaboration est une opportunite d'explorer de nouvelles visions et de repousser les limites de ma creativite.",
+      "image": "/images/collab/homecollab1.JPG",
+      "heroImage": "/images/collab/homecollab2.jpeg",
+      "photos": [
+        "/images/collab/homecollab1.JPG",
+        "/images/collab/homecollab2.jpeg",
+        "/images/collab/homecollab3.jpeg",
+        "/images/collab/homecollab4.JPG",
+        "/images/collab/image00059.jpeg",
+        "/images/collab/image00060.jpeg",
+        "/images/collab/image00061.jpeg",
+        "/images/collab/IMG_3047.JPG"
+      ]
+    },
+    {
+      "id": "test",
+      "title": "test",
+      "subtitle": "Collection 2026",
+      "year": "2026",
+      "description": "eargarerezargvrerveazevreezsvrsrtshsterht",
+      "image": "/images/DAWNblack.svg",
+      "heroImage": "/images/fichier-7-1-.svg",
+      "photos": [
+        "/images/logo.svg"
+      ]
+    }
+  ]
+}

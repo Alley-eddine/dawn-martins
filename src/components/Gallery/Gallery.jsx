@@ -1,17 +1,25 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-export default function Gallery({ jsonPath, withLinks = false }) {
+export default function Gallery({ jsonPath, photos, withLinks = false }) {
   const [images, setImages] = useState([]);
 
   useEffect(() => {
-    fetch(jsonPath)
-      .then((res) => res.json())
-      .then((data) => {
-        setImages(data.images || []);
-      })
-      .catch((err) => console.log('Erreur chargement images:', err));
-  }, [jsonPath]);
+    // Si photos est fourni directement, l'utiliser
+    if (photos && photos.length > 0) {
+      setImages(photos.map(p => typeof p === 'string' ? { image: p } : p));
+      return;
+    }
+    // Sinon charger depuis jsonPath
+    if (jsonPath) {
+      fetch(jsonPath)
+        .then((res) => res.json())
+        .then((data) => {
+          setImages(data.images || []);
+        })
+        .catch((err) => console.log('Erreur chargement images:', err));
+    }
+  }, [jsonPath, photos]);
 
   useEffect(() => {
     if (images.length > 0 && typeof window.jQuery !== 'undefined') {
