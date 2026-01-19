@@ -6,8 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "build:prod": "node scripts/process-new-images.js && vite build",
     "preview": "vite preview",
-    "optimize-images": "node scripts/optimize-images.js"
+    "optimize-images": "node scripts/optimize-images.js",
+    "process-images": "node scripts/process-new-images.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "^4.3.0",
