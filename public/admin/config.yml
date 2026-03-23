@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: OWNER/REPO_NAME  # <- remplace par ton repo GitHub (ex: tonpseudo/dawn-martins)
   branch: main
+  auth_type: pkce
+  app_id: GITHUB_OAUTH_CLIENT_ID  # <- remplace par le Client ID de ton OAuth App
 
 local_backend: true
 
