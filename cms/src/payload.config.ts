@@ -36,6 +36,12 @@ export default buildConfig({
   }),
   sharp,
   serverURL: process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3001',
-  cors: [process.env.FRONTEND_URL || 'http://localhost:5173'],
-  csrf: [process.env.FRONTEND_URL || 'http://localhost:5173'],
+  cors: [
+    process.env.FRONTEND_URL || 'http://localhost:5173',
+    ...(process.env.FRONTEND_URL_ALT ? [process.env.FRONTEND_URL_ALT] : []),
+  ],
+  csrf: [
+    process.env.FRONTEND_URL || 'http://localhost:5173',
+    ...(process.env.FRONTEND_URL_ALT ? [process.env.FRONTEND_URL_ALT] : []),
+  ],
 })
