@@ -4,3 +4,5 @@ node_modules/
 media/
 *.tsbuildinfo
 next-env.d.ts
+.pnpm-store/
+pnpm-lock.yaml
