@@ -10,5 +10,11 @@ export const About: GlobalConfig = {
     { name: 'subtitle', type: 'text' },
     { name: 'bio', type: 'richText' },
     { name: 'profileImage', type: 'upload', relationTo: 'media' },
+    {
+      name: 'cv',
+      type: 'upload',
+      relationTo: 'documents',
+      admin: { description: 'PDF file for the downloadable CV' },
+    },
   ],
 }
