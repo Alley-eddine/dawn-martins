@@ -9,6 +9,10 @@ export const Users: CollectionConfig = {
     tokenExpiration: 7200,
     maxLoginAttempts: 5,
     lockTime: 600000,
+    cookies: {
+      secure: false,
+      sameSite: 'lax',
+    },
   },
   access: {
     read: ({ req: { user } }) => !!user,
