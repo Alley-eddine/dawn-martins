@@ -1,57 +1,113 @@
+import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import useInitScripts from '../hooks/useInitScripts';
+import { getAbout } from '../services/cms';
+import './About.css';
+
+function renderRichText(richText) {
+  if (!richText?.root?.children) return null;
+  return richText.root.children.map((node, i) => {
+    if (node.type === 'paragraph') {
+      const text = node.children?.map((c) => c.text || '').join('') || '';
+      if (!text) return null;
+      return <p key={i}>{text}</p>;
+    }
+    return null;
+  });
+}
+
+const defaultBio = [
+  'Bachelor Fashion Design student at Lisaa Mode Paris, Dawn Martins is a young fashion designer passionate about fashion and design. Her approach to creation is instinctive and deeply personal — each collection is born from an emotion, an urgency, a story that demands to be told through fabric.',
+  'In her first year, she distinguished herself with an ambitious personal project: organizing her own fashion show with her collection "Meteore". This bold move established her as a designer unafraid to leap before looking.',
+  'Her work explores contrasts, movement, and textures, creating sculptural and expressive pieces that blur the line between fashion and performance art.',
+];
 
 export default function About() {
   useInitScripts();
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    getAbout()
+      .then(setData)
+      .catch((err) => console.log('Error loading about:', err));
+  }, []);
+
+  const profileImg = data?.profileImage || '/images/reportage_meteore/HOME1.JPG';
 
   return (
     <div className="w-100">
       <main>
       <Helmet>
         <title>About - Dawn Martins</title>
-        <meta name="description" content="Discover Dawn Martins, young Parisian fashion designer studying Bachelor Fashion Design at Lisaa Mode Paris. Contact and background." />
+        <meta name="description" content="Discover Dawn Martins, young Parisian fashion designer studying Bachelor Fashion Design at Lisaa Mode Paris." />
       </Helmet>
 
-      <Header />
+      <Header transparent={true} />
 
-      {/* About section */}
-      <section className="wow animate__fadeIn">
+      {/* Hero */}
+      <section className="about-hero wow animate__fadeIn">
+        <div className="about-hero-image">
+          <img src={profileImg} alt="Dawn Martins" />
+        </div>
+        <div className="about-hero-overlay" />
+        <div className="about-hero-content">
+          <span className="subtitle">{data?.subtitle || 'Fashion Designer'}</span>
+          <h1>{data?.title || 'Dawn Martins'}</h1>
+        </div>
+      </section>
+
+      {/* Bio */}
+      <section className="about-bio wow animate__fadeIn">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-lg-5 col-md-6 text-center md-margin-50px-bottom wow animate__fadeInLeft">
-              <picture>
-                <source srcSet="/images/reportage_meteore/HOME1.webp" type="image/webp" />
-                <img src="/images/reportage_meteore/HOME1.JPG" alt="Dawn Martins - Parisian fashion designer" className="w-100" loading="lazy" width="600" height="800" />
-              </picture>
-            </div>
-            <div className="col-lg-6 offset-lg-1 col-md-6 wow animate__fadeInRight">
-              <h5 className="alt-font text-extra-dark-gray font-weight-600 margin-20px-bottom">
-                Dawn Martins
-              </h5>
-              <p className="text-medium line-height-28 margin-30px-bottom">
-                Bachelor Fashion Design student at Lisaa Mode Paris, Dawn Martins is a young fashion designer passionate about fashion and design.
-              </p>
-              <p className="text-medium line-height-28 margin-30px-bottom">
-                In her first year, she distinguished herself with an ambitious personal project: organizing her own fashion show with her collection "Meteore".
-              </p>
-              <p className="text-medium line-height-28 margin-30px-bottom">
-                Her work explores contrasts, movement, and textures, creating unique pieces that tell a story.
-              </p>
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              <div className="about-bio-text">
+                {data?.bio ? renderRichText(data.bio) : (
+                  defaultBio.map((text, i) => <p key={i}>{text}</p>)
+                )}
 
-              {/* Background */}
-              <div className="margin-40px-top">
-                <div className="row">
-                  <div className="col-12 margin-20px-bottom">
-                    <span className="alt-font text-medium-gray text-uppercase text-extra-small">
-                      2023 - Present
-                    </span>
-                    <span className="alt-font text-extra-dark-gray font-weight-600 d-block">
-                      Lisaa Mode Paris
-                    </span>
-                    <span className="text-medium">Bachelor Fashion Design</span>
-                  </div>
+                {data?.cv && (
+                  <a href={data.cv} target="_blank" rel="noreferrer" className="about-cv-btn">
+                    <i className="fa-solid fa-arrow-down"></i>
+                    Download CV
+                  </a>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Parcours */}
+      <section className="about-timeline wow animate__fadeIn">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-lg-8">
+              <div className="about-timeline-title">Background</div>
+
+              <div className="timeline-item wow animate__fadeInUp">
+                <div className="timeline-year">2023 — Present</div>
+                <div className="timeline-content">
+                  <h4>Lisaa Mode Paris</h4>
+                  <p>Bachelor Fashion Design</p>
+                </div>
+              </div>
+
+              <div className="timeline-item wow animate__fadeInUp" data-wow-delay="0.1s">
+                <div className="timeline-year">2024</div>
+                <div className="timeline-content">
+                  <h4>Meteore — First Fashion Show</h4>
+                  <p>Self-produced debut collection and runway show</p>
+                </div>
+              </div>
+
+              <div className="timeline-item wow animate__fadeInUp" data-wow-delay="0.2s">
+                <div className="timeline-year">2025</div>
+                <div className="timeline-content">
+                  <h4>Hauts-de-Seine — Revele ton Talent</h4>
+                  <p>Featured as a young emerging designer</p>
                 </div>
               </div>
             </div>
@@ -59,57 +115,33 @@ export default function About() {
         </div>
       </section>
 
-      {/* Contact section */}
-      <section className="wow animate__fadeIn bg-light-gray" id="contact">
+      {/* Contact */}
+      <section className="about-contact wow animate__fadeIn">
         <div className="container">
           <div className="row justify-content-center">
-            <div className="col-lg-6 col-md-8 text-center margin-50px-bottom">
-              <h4 className="alt-font text-extra-dark-gray font-weight-600">Contact</h4>
-              <p className="text-medium">
-                Have a project or a question? Feel free to contact me.
-              </p>
-            </div>
-          </div>
-          <div className="row justify-content-center">
-            {/* Email */}
-            <div className="col-lg-4 col-md-6 text-center margin-30px-bottom">
-              <div className="padding-30px-all bg-white box-shadow-light">
-                <i className="fa-regular fa-envelope icon-medium text-deep-pink margin-20px-bottom d-block"></i>
-                <span className="alt-font text-extra-dark-gray font-weight-600 d-block margin-10px-bottom">
-                  Email
-                </span>
-                <a href="mailto:contact@dawnmartins.com" className="text-medium">
-                  contact@dawnmartins.com
-                </a>
-              </div>
-            </div>
+            <div className="col-lg-8">
+              <div className="about-contact-title">Get in touch</div>
 
-            {/* Instagram */}
-            <div className="col-lg-4 col-md-6 text-center margin-30px-bottom">
-              <div className="padding-30px-all bg-white box-shadow-light">
-                <i className="fa-brands fa-instagram icon-medium text-deep-pink margin-20px-bottom d-block"></i>
-                <span className="alt-font text-extra-dark-gray font-weight-600 d-block margin-10px-bottom">
-                  Instagram
-                </span>
-                <a
-                  href="https://instagram.com/dawnmartinsparis/"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="text-medium"
-                >
-                  @dawnmartinsparis
-                </a>
-              </div>
-            </div>
+              <div className="contact-grid">
+                <div className="contact-item wow animate__fadeInUp">
+                  <i className="fa-regular fa-envelope"></i>
+                  <span className="contact-item-label">Email</span>
+                  <a href="mailto:contact@dawnmartins.com">contact@dawnmartins.com</a>
+                </div>
 
-            {/* Location */}
-            <div className="col-lg-4 col-md-6 text-center margin-30px-bottom">
-              <div className="padding-30px-all bg-white box-shadow-light">
-                <i className="fa-solid fa-location-dot icon-medium text-deep-pink margin-20px-bottom d-block"></i>
-                <span className="alt-font text-extra-dark-gray font-weight-600 d-block margin-10px-bottom">
-                  Location
-                </span>
-                <span className="text-medium">Paris, France</span>
+                <div className="contact-item wow animate__fadeInUp" data-wow-delay="0.1s">
+                  <i className="fa-brands fa-instagram"></i>
+                  <span className="contact-item-label">Instagram</span>
+                  <a href="https://instagram.com/dawnmartinsparis/" target="_blank" rel="noreferrer">
+                    @dawnmartinsparis
+                  </a>
+                </div>
+
+                <div className="contact-item wow animate__fadeInUp" data-wow-delay="0.2s">
+                  <i className="fa-solid fa-location-dot"></i>
+                  <span className="contact-item-label">Based in</span>
+                  <span>Paris, France</span>
+                </div>
               </div>
             </div>
           </div>
