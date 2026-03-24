@@ -11,7 +11,7 @@ export const Users: CollectionConfig = {
     lockTime: 600000,
     cookies: {
       secure: false,
-      sameSite: 'lax',
+      sameSite: 'Lax',
     },
   },
   access: {
