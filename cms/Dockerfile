@@ -12,6 +12,9 @@ FROM base AS builder
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 ENV NODE_ENV=production
+ENV PAYLOAD_SECRET=build-time-secret-not-used-at-runtime!!
+ENV DATABASE_URL=postgresql://placeholder:5432/placeholder
+RUN pnpm generate:importmap
 RUN pnpm build
 
 # Production
