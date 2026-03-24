@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import useInitScripts from '../hooks/useInitScripts';
+import { getCollections } from '../services/cms';
 import './Collections.css';
 
 export default function Collections() {
@@ -13,15 +14,13 @@ export default function Collections() {
   const [years, setYears] = useState([]);
 
   useEffect(() => {
-    fetch('/content/collections.json')
-      .then((res) => res.json())
-      .then((data) => {
-        setCollections(data.collections || []);
-        // Extraire les années uniques
-        const uniqueYears = [...new Set(data.collections.map(c => c.year))].sort().reverse();
+    getCollections()
+      .then((cols) => {
+        setCollections(cols);
+        const uniqueYears = [...new Set(cols.map(c => c.year))].sort().reverse();
         setYears(uniqueYears);
       })
-      .catch((err) => console.log('Erreur chargement collections:', err));
+      .catch((err) => console.log('Error loading collections:', err));
   }, []);
 
   const filteredCollections = filter === 'all'
@@ -84,10 +83,7 @@ export default function Collections() {
                 className={`collection-card ${index % 3 === 0 ? 'tall' : ''}`}
               >
                 <div className="collection-image">
-                  <picture>
-                    <source srcSet={collection.image.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                    <img src={collection.image} alt={`${collection.title} by Dawn Martins`} loading="lazy" width="600" height="800" />
-                  </picture>
+                  <img src={collection.image} alt={`${collection.title} by Dawn Martins`} loading="lazy" width="600" height="800" />
                 </div>
                 <div className="collection-overlay">
                   <div className="collection-info">

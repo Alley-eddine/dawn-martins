@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Gallery from '../components/Gallery';
 import useInitScripts from '../hooks/useInitScripts';
+import { getCollection } from '../services/cms';
 
 export default function Collection() {
   useInitScripts();
@@ -13,15 +14,13 @@ export default function Collection() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/content/collections.json')
-      .then((res) => res.json())
-      .then((data) => {
-        const found = data.collections.find(c => c.id === slug);
-        setCollection(found || null);
+    getCollection(slug)
+      .then((col) => {
+        setCollection(col);
         setLoading(false);
       })
       .catch((err) => {
-        console.log('Erreur chargement collection:', err);
+        console.log('Error loading collection:', err);
         setLoading(false);
       });
   }, [slug]);
@@ -70,17 +69,14 @@ export default function Collection() {
           <div className="row align-items-center">
             {/* Image */}
             <div className="col-lg-5 col-md-6 text-center md-margin-50px-bottom wow animate__fadeInLeft">
-              <picture>
-                <source srcSet={collection.heroImage?.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                <img
-                  src={collection.heroImage || collection.image}
-                  alt={collection.title}
-                  className="w-100"
-                  style={{ maxHeight: '600px', objectFit: 'cover' }}
-                  width="600"
-                  height="800"
-                />
-              </picture>
+              <img
+                src={collection.heroImage || collection.image}
+                alt={collection.title}
+                className="w-100"
+                style={{ maxHeight: '600px', objectFit: 'cover' }}
+                width="600"
+                height="800"
+              />
             </div>
             {/* Texte */}
             <div className="col-lg-6 offset-lg-1 col-md-6 wow animate__fadeInRight">

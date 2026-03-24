@@ -4,16 +4,16 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Gallery from '../components/Gallery';
 import useInitScripts from '../hooks/useInitScripts';
+import { getHomepage } from '../services/cms';
 
 export default function Home() {
   useInitScripts();
   const [data, setData] = useState(null);
 
   useEffect(() => {
-    fetch('/content/homepage.json')
-      .then((res) => res.json())
+    getHomepage()
       .then((json) => setData(json))
-      .catch((err) => console.log('Erreur chargement homepage:', err));
+      .catch((err) => console.log('Error loading homepage:', err));
   }, []);
 
   if (!data) {
@@ -25,8 +25,6 @@ export default function Home() {
       </div>
     );
   }
-
-  const webpBg = data.hero.backgroundImage.replace(/\.(jpg|jpeg|png)$/i, '.webp');
 
   return (
     <div className="w-100">
@@ -42,7 +40,7 @@ export default function Home() {
       <section
         className="wow animate__fadeIn p-0 position-relative parallax sm-background-image-center"
         data-parallax-background-ratio="0.5"
-        style={{ backgroundImage: `url('${webpBg}'), url('${data.hero.backgroundImage}')` }}
+        style={{ backgroundImage: `url('${data.hero.backgroundImage}')` }}
       >
         <div className="container position-relative one-fourth-screen">
           <div className="row h-100 align-items-center">
@@ -82,47 +80,39 @@ export default function Home() {
         <section className="wow animate__fadeIn">
           <div className="container">
             <div className="row">
-              <div className="col-12 blog-content">
-                <ul className="blog-simple blog-wrapper grid grid-loading grid-4col xl-grid-4col lg-grid-3col md-grid-2col sm-grid-2col xs-grid-1col gutter-extra-large">
-                  <li className="grid-sizer"></li>
-
-                  {data.articles.map((article, index) => (
-                    <li key={index} className="grid-item wow animate__fadeInUp" data-wow-delay={index % 2 === 1 ? '0.2s' : undefined}>
-                      <div className="blog-post blog-post-style2 lg-margin-50px-bottom md-margin-30px-bottom xs-margin-15px-bottom">
-                        <div className="post-details">
-                          <span className="text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom md-margin-5px-bottom">
-                            {article.date}
-                          </span>
-                          <span className="text-large alt-font w-85 lg-w-95 margin-15px-bottom d-block">
-                            {article.link ? (
-                              <a href={article.link} className="text-extra-dark-gray" target="_blank" rel="noreferrer">
-                                {article.title}
-                              </a>
-                            ) : (
-                              <span className="text-extra-dark-gray">{article.title}</span>
-                            )}
-                          </span>
-                          <p className="w-90 sm-margin-15px-bottom sm-w-100">
-                            {article.description}
-                          </p>
-                          <div className="margin-20px-top author border-top border-color-extra-light-gray padding-25px-top sm-padding-15px-top sm-no-margin-top">
-                            <span className="text-medium-gray text-uppercase text-extra-small padding-15px-left">
-                              by{' '}
-                              {article.link ? (
-                                <a href={article.link} className="text-medium-gray" target="_blank" rel="noreferrer">
-                                  {article.author}
-                                </a>
-                              ) : (
-                                <span className="text-medium-gray">{article.author}</span>
-                              )}
-                            </span>
-                          </div>
-                        </div>
+              {data.articles.map((article, index) => (
+                <div key={index} className="col-lg-4 col-md-6 col-12 margin-30px-bottom wow animate__fadeInUp" data-wow-delay={index % 2 === 1 ? '0.2s' : undefined}>
+                  <div className="blog-post blog-post-style2">
+                    <div className="post-details">
+                      <span className="text-extra-small text-medium-gray text-uppercase d-block margin-10px-bottom">
+                        {article.date}
+                      </span>
+                      <span className="text-large alt-font margin-15px-bottom d-block">
+                        {article.link ? (
+                          <a href={article.link} className="text-extra-dark-gray" target="_blank" rel="noreferrer">
+                            {article.title}
+                          </a>
+                        ) : (
+                          <span className="text-extra-dark-gray">{article.title}</span>
+                        )}
+                      </span>
+                      <p>{article.description}</p>
+                      <div className="margin-20px-top border-top border-color-extra-light-gray padding-25px-top">
+                        <span className="text-medium-gray text-uppercase text-extra-small">
+                          by{' '}
+                          {article.link ? (
+                            <a href={article.link} className="text-medium-gray" target="_blank" rel="noreferrer">
+                              {article.author}
+                            </a>
+                          ) : (
+                            <span className="text-medium-gray">{article.author}</span>
+                          )}
+                        </span>
                       </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

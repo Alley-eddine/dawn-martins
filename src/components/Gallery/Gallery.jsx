@@ -76,17 +76,11 @@ export default function Gallery({ jsonPath, photos, withLinks = false }) {
                   >
                     {withLinks && link !== '#' ? (
                       <Link to={link} aria-label={item.title || 'Voir la collection'}>
-                        <picture>
-                          <source srcSet={imgSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                          <img src={imgSrc} alt={item.title ? `${item.title} - Dawn Martins` : 'Creation Dawn Martins'} width="800" height="600" />
-                        </picture>
+                        <img src={imgSrc} alt={item.title ? `${item.title} - Dawn Martins` : 'Creation Dawn Martins'} width="800" height="600" />
                       </Link>
                     ) : (
                       <a href={imgSrc} data-group="lightbox-gallery" aria-label="Voir l'image en grand">
-                        <picture>
-                          <source srcSet={imgSrc.replace(/\.(jpg|jpeg|png)$/i, '.webp')} type="image/webp" />
-                          <img src={imgSrc} alt={item.title ? `${item.title} - Dawn Martins` : 'Creation Dawn Martins'} width="800" height="600" />
-                        </picture>
+                        <img src={imgSrc} alt={item.title ? `${item.title} - Dawn Martins` : 'Creation Dawn Martins'} width="800" height="600" />
                       </a>
                     )}
                   </div>
