@@ -28,4 +28,4 @@ COPY --from=builder /app/next.config.ts ./
 COPY --from=builder /app/src ./src
 RUN mkdir -p /app/media
 EXPOSE 3000
-CMD ["pnpm", "start"]
+CMD ["sh", "-c", "pnpm payload migrate && pnpm start"]
