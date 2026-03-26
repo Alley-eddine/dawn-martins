@@ -126,7 +126,7 @@ export default function About() {
                 <div className="contact-item wow animate__fadeInUp">
                   <i className="fa-regular fa-envelope"></i>
                   <span className="contact-item-label">Email</span>
-                  <a href="mailto:contact@dawnmartins.com">contact@dawnmartins.com</a>
+                  <a href={`mailto:${data?.email || 'contact@dawnmartins.com'}`}>{data?.email || 'contact@dawnmartins.com'}</a>
                 </div>
 
                 <div className="contact-item wow animate__fadeInUp" data-wow-delay="0.1s">

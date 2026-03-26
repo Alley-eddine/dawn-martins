@@ -19,8 +19,8 @@ const API = process.env.PAYLOAD_PUBLIC_SERVER_URL || 'http://localhost:3002'
 const IMAGES_DIR = path.resolve(__dirname, '../public/images')
 const CONTENT_DIR = path.resolve(__dirname, '../public/content')
 
-const ADMIN_EMAIL = 'dawn@dawnmartins.com'
-const ADMIN_PASSWORD = 'Dawn2025!cms'
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL || 'dawn@dawnmartins.com'
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'Dawn2025!cms'
 
 let token = ''
 

@@ -16,5 +16,10 @@ export const About: GlobalConfig = {
       relationTo: 'documents',
       admin: { description: 'PDF file for the downloadable CV' },
     },
+    {
+      name: 'email',
+      type: 'email',
+      admin: { description: 'Contact email displayed on the About page' },
+    },
   ],
 }

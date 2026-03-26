@@ -67,6 +67,7 @@ export async function getAbout() {
     bio: data.bio || null,
     profileImage: mediaUrl(data.profileImage, 'hero') || mediaUrl(data.profileImage),
     cv: docUrl(data.cv),
+    email: data.email || null,
   }
 }
 
