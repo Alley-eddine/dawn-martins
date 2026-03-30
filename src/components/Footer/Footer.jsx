@@ -20,7 +20,7 @@ export default function Footer() {
             {/* Copyright */}
             <div className="col-md-6 text-center text-small alt-font sm-margin-10px-bottom">
               &copy; 2026 Dawn Martins. Website by{' '}
-              <a href="https://alleycom.fr" target="_blank" rel="noreferrer" title="Alleycom">
+              <a href="https://alleycom.vercel.app" target="_blank" rel="noreferrer" title="Alleycom">
                 Alleycom
               </a>
               .
